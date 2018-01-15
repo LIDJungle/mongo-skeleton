@@ -1,0 +1,25 @@
+<h1>Messages</h1>
+
+<p>Here are the messages people have left.</p>
+<p>If not, here's what went wrong. <br/>Errors: {{err}}</p>
+
+<div class="postForm">
+    <form action="/messages" method="post" enctype="application/x-www-form-urlencoded">
+        Message: <input type="text" name="message"/>    
+        Username: <input type="text" name="username"/>
+        Active: <input type="checkbox" name="active"/>
+        Urgent: <input type="checkbox" name="message_type"/>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{{#each messages}}
+<div class="message {{message_type}}">
+    <p>{{message}}</p>
+    <p>By: {{username}}</p>
+    <p>Active Status: {{active}}</p>
+    <p>Created: {{added}}</p>
+    <p>Message Type: {{message_type}}</p>
+    
+</div>
+{{/each}}
+

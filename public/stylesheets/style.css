@@ -1,0 +1,24 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+div.message {
+  border: 1px solid #CCC;
+  padding: 10px;
+  margin: 10px 5px 5px 10px;
+  border-radius: 5px; }
+
+div.postform {
+  border: 1px solid #CCC;
+  border-radius: 5px; }
+
+div.normal {
+  background-color: lightskyblue; }
+
+div.urgent {
+  background-color: #ff1e1e61; }
+
+/*# sourceMappingURL=style.css.map */
