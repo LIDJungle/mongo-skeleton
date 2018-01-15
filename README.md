@@ -15,13 +15,13 @@ Steps to (really) set up node to be able to generate express scripts:
     Install node js.
     npm install express -g
     npm install express-generator -g
-    npm install windows-build-tools -g
+    npm install windows-build-tools -g (Must be run in administrator prompt)
     express --view=hbs --git --css=sass <directory>
 	
 This creates an express app with Handlebars.js and SASS support
 
-	npm install mongo -g
-	npm install mongoose -g
+	npm install mongo --save
+	npm install mongoose --save
 	
 This configures your mongo/mongoose modules.
 
