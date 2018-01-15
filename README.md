@@ -1,8 +1,16 @@
 # mongo-skeleton
 A basic node/express/mongo/mongoose skeleton for reference
 
-## Installation:
-Steps to (really) set up node to be able to run express scripts:
+
+## To Run:
+	Clone repo
+	npm install
+	You must have a local mongodb server running on 27017
+
+## Generator Installation:
+Out of the box, there are quite a few things they don't tell you. Express-generator runs fine with JADE and defaults, but when you want to add a CSS processor or other, it might rely on outher build libraries. For this reason we need to install the "windows-build-tools" NPM module so that we have python and Visual C++ available. 
+
+Steps to (really) set up node to be able to generate express scripts:
 
     Install node js.
     npm install express -g
