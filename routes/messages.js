@@ -41,20 +41,19 @@ router.get('/', function(req, res, next) {
  * this shows basic "body-parser" usage.
  */
 router.post('/', function(req, res, next) {
-  if (!req.body) return res.sendStatus(400);
-  console.log("Active: ", req.body.active);
+  if (!req.body) return res.sendStatus(400); // body-parser didn't work - send error
   var myMessage = new messageModel({
     message: req.body.message, // Our model forces this to not be blank.
     active: req.body.active === 'on' ? true : false,
     username: typeof(req.body.username) === 'string' && req.body.username !== ''  ? req.body.username : 'Anonymous',
     message_type: req.body.message_type === 'on' ? 'urgent' : 'normal'
   });
-  myMessage.talk();
-  myMessage.save(function (err, myMessage) {
+  myMessage.talk(); // Use our model method to echo the message to the console.
+  myMessage.save(function (err, myMessage) {  // Save the message
       if (err) {
         return res.send({status: err});
       } else {
-        res.redirect('/messages');
+        res.redirect('/messages'); // Show all messages
       }
   });
 });
@@ -74,9 +73,8 @@ router.post('/test', function(req, res, next) {
       if (err) {
         return res.send({status: err});
       } else {
-        res.redirect('/messages/latest');
+        res.redirect('/messages/latest'); // Show only the latest message in the database.
       }
-      myMessage.talk();
   });
 });
 
