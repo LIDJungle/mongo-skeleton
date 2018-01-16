@@ -44,9 +44,9 @@ router.post('/', function(req, res, next) {
   if (!req.body) return res.sendStatus(400);
   console.log("Active: ", req.body.active);
   var myMessage = new messageModel({
-    message: req.body.message,
+    message: req.body.message, // Our model forces this to not be blank.
     active: req.body.active === 'on' ? true : false,
-    username: typeof(req.body.username) === 'string' ?req.body.username : 'Anonymous',
+    username: typeof(req.body.username) === 'string' && req.body.username !== ''  ? req.body.username : 'Anonymous',
     message_type: req.body.message_type === 'on' ? 'urgent' : 'normal'
   });
   myMessage.talk();
